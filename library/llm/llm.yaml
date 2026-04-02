@@ -1,0 +1,16 @@
+llm:
+  providers:
+    - name: openai
+      baseurl: https://api.openai.com/v1
+      model: gpt-3.5-turbo
+      key: ${OPENAI_KEY}
+    - name: kimi
+      baseurl: https://api.moonshot.cn/v1
+      model: moonshot-v1-8k
+      key: ${KIMI_KEY}
+    - name: deepseek
+      baseurl: https://api.deepseek.com/v1
+      model: deepseek-chat
+      key: ${DEEPSEEK_KEY}
+  # 降级顺序：deepseek → openai → kimi
+  fallback_order: [ "deepseek" , "openai", "kimi" ]
