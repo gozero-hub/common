@@ -7,10 +7,10 @@ import (
 	"io"
 	"net/http"
 
-	"gitee.com/scholar-hub/go-zero-common/tool"
+	"github.com/gozero-hub/common/tool"
 	"github.com/zeromicro/go-zero/core/logc"
 
-	"gitee.com/scholar-hub/go-zero-common/xerr"
+	"github.com/gozero-hub/common/xerr"
 
 	"github.com/pkg/errors"
 	"github.com/zeromicro/go-zero/rest/httpx"

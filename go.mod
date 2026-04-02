@@ -1,4 +1,4 @@
-module gitee.com/scholar-hub/go-zero-common
+module github.com/gozero-hub/common
 
 go 1.24.0
 

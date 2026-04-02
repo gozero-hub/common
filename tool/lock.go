@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"gitee.com/scholar-hub/go-zero-common/xerr"
+	"github.com/gozero-hub/common/xerr"
 	"github.com/zeromicro/go-zero/core/stores/redis"
 )
 

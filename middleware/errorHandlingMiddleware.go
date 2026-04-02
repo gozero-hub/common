@@ -3,7 +3,7 @@ package middleware
 import (
 	"net/http"
 
-	"gitee.com/scholar-hub/go-zero-common/result"
+	"github.com/gozero-hub/common/result"
 
 	"github.com/pkg/errors"
 )

@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"gitee.com/scholar-hub/go-zero-common/result"
-	"gitee.com/scholar-hub/go-zero-common/xerr"
+	"github.com/gozero-hub/common/result"
+	"github.com/gozero-hub/common/xerr"
 )
 
 func ResponseMiddlewarefunc(next http.HandlerFunc) http.HandlerFunc {

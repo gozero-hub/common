@@ -3,7 +3,7 @@ package result
 import (
 	"net/http"
 
-	"gitee.com/scholar-hub/go-zero-common/xerr"
+	"github.com/gozero-hub/common/xerr"
 )
 
 func JwtUnauthorizedCallback(w http.ResponseWriter, r *http.Request, err error) {

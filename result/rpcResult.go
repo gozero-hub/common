@@ -6,7 +6,7 @@ import (
 
 	"github.com/zeromicro/go-zero/core/logc"
 
-	"gitee.com/scholar-hub/go-zero-common/xerr"
+	"github.com/gozero-hub/common/xerr"
 
 	"github.com/pkg/errors"
 	"google.golang.org/grpc/status"

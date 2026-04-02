@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"strings"
 
-	"gitee.com/scholar-hub/go-zero-common/tool"
+	"github.com/gozero-hub/common/tool"
 
 	"github.com/zeromicro/go-zero/core/logc"
 	"github.com/zeromicro/go-zero/core/logx"

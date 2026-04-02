@@ -4,9 +4,9 @@ import (
     "errors"
     "net/http"
 
-    "gitee.com/scholar-hub/go-zero-common/result"
-    {{if .HasRequest}}"gitee.com/scholar-hub/go-zero-common/xerr"{{end}}
-    {{if .HasRequest}}"gitee.com/scholar-hub/go-zero-common/translator"{{end}}
+    "github.com/gozero-hub/common/result"
+    {{if .HasRequest}}"github.com/gozero-hub/common/xerr"{{end}}
+    {{if .HasRequest}}"github.com/gozero-hub/common/translator"{{end}}
     {{if .HasRequest}}"github.com/zeromicro/go-zero/rest/httpx"{{end}}
     {{.ImportPackages}}
 )
