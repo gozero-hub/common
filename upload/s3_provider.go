@@ -6,8 +6,6 @@ import (
 	"fmt"
 	"time"
 
-	"resyapi/internal/config"
-
 	"github.com/aws/aws-sdk-go-v2/aws"
 	awsConfig "github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/credentials"
@@ -18,13 +16,13 @@ import (
 
 // S3Provider S3上传服务提供者
 type S3Provider struct {
-	cfg       config.S3Config
+	cfg       S3Config
 	client    *s3.Client
 	stsClient *sts.Client
 }
 
 // NewS3Provider 创建S3Provider
-func NewS3Provider(cfg config.S3Config) (*S3Provider, error) {
+func NewS3Provider(cfg S3Config) (*S3Provider, error) {
 	if !cfg.Enabled {
 		return nil, fmt.Errorf("s3 provider is not enabled")
 	}
@@ -47,7 +45,7 @@ func NewS3Provider(cfg config.S3Config) (*S3Provider, error) {
 }
 
 // createS3Client 创建S3客户端
-func createS3Client(cfg config.S3Config) (*s3.Client, error) {
+func createS3Client(cfg S3Config) (*s3.Client, error) {
 	var optFns []func(*awsConfig.LoadOptions) error
 
 	if cfg.AccessKeyId != "" && cfg.AccessKeySecret != "" {
@@ -81,7 +79,7 @@ func createS3Client(cfg config.S3Config) (*s3.Client, error) {
 }
 
 // createStsClient 创建STS客户端
-func createStsClient(cfg config.S3Config) (*sts.Client, error) {
+func createStsClient(cfg S3Config) (*sts.Client, error) {
 	var optFns []func(*awsConfig.LoadOptions) error
 
 	if cfg.AccessKeyId != "" && cfg.AccessKeySecret != "" {

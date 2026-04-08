@@ -8,20 +8,18 @@ import (
 	"net/http"
 	"time"
 
-	"resyapi/internal/config"
-
 	"github.com/aliyun/aliyun-oss-go-sdk/oss"
 )
 
 // OSSProvider 阿里云OSS上传服务提供者
 type OSSProvider struct {
-	cfg    config.OSSConfig
+	cfg    OSSConfig
 	client *oss.Client
 	bucket *oss.Bucket
 }
 
 // NewOSSProvider 创建OSSProvider
-func NewOSSProvider(cfg config.OSSConfig) (*OSSProvider, error) {
+func NewOSSProvider(cfg OSSConfig) (*OSSProvider, error) {
 	if !cfg.Enabled {
 		return nil, fmt.Errorf("oss provider is not enabled")
 	}

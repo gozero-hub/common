@@ -3,8 +3,6 @@ package upload
 import (
 	"context"
 	"time"
-
-	"resyapi/internal/config"
 )
 
 // UploadProvider 上传服务提供者接口（策略模式）
@@ -61,11 +59,3 @@ type UploadOptions struct {
 	ACL         string
 	Metadata    map[string]string
 }
-
-// ProviderType 上传服务提供商类型
-type ProviderType = config.ProviderType
-
-const (
-	ProviderS3  = config.ProviderS3
-	ProviderOSS = config.ProviderOSS
-)
