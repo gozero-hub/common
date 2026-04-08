@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
+	"errors"
 	"io"
 	"net/http"
 	"net/url"
@@ -11,6 +12,8 @@ import (
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
+
+var ErrRetryable = errors.New("retryable error")
 
 type Client struct {
 	httpClient  *http.Client
