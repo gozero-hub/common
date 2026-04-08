@@ -20,7 +20,7 @@ var (
 )
 
 // NewManager 创建上传管理器
-func NewManager(cfg UploadConfig) (*Manager, error) {
+func NewManager(cfg UploadConfig) *Manager {
 	m := &Manager{
 		config:    cfg,
 		providers: make(map[ProviderType]UploadProvider),
@@ -28,19 +28,17 @@ func NewManager(cfg UploadConfig) (*Manager, error) {
 
 	// 初始化默认的Provider
 	if err := m.initProviders(); err != nil {
-		return nil, err
+		panic(fmt.Sprintf("failed to initialize upload providers: %v", err))
 	}
 
-	return m, nil
+	return m
 }
 
 // InitGlobalManager 初始化全局管理器
-func InitGlobalManager(cfg UploadConfig) error {
-	var err error
+func InitGlobalManager(cfg UploadConfig) {
 	once.Do(func() {
-		globalManager, err = NewManager(cfg)
+		globalManager = NewManager(cfg)
 	})
-	return err
 }
 
 // GetGlobalManager 获取全局管理器
